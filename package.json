@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "init-project": "rm -rf node_modules && npm install && node app.js list",
+    "list-notes": "node app.js list",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Mead",
