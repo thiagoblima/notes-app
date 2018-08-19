@@ -6,8 +6,6 @@
  * @instance: data  - @type: <object>
  */
 
-
-
 export interface LoggerModel {
     msg: string;
     data?: {}
