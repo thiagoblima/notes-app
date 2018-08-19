@@ -12,7 +12,7 @@ import { CommandLine } from "./command-line";
 import { Notes } from "./notes";
 
 const commandLine = new CommandLine();
-const notes = new Notes();
+const notes = new Notes({});
 
 
 if (commandLine.command === 'add') {

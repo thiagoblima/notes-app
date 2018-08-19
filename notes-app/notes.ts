@@ -18,9 +18,9 @@ export interface NotesModel {
 export class Notes implements NotesModel {
     public notesString;
     public notes;
-    constructor() {
-        this.notesString;
-        this.notes;
+    constructor({... attr}) {
+        this.notesString = attr.notesString;
+        this.notes       = attr.notes;
     }
 
     private fetchNotes(): [] {
