@@ -23,7 +23,7 @@ export class Notes implements NotesModel {
         this.notes = attr.notes;
     }
 
-    private fetchNotes(): Array<string> {
+    private fetchNotes(): Array<Buffer[]> {
         try {
             this.notesString = fs.readFileSync('notes-data.json');
             return JSON.parse(this.notesString.toString());
@@ -51,7 +51,7 @@ export class Notes implements NotesModel {
         }
     };
 
-    private getAll: (x) => Array<string> = () => {
+    private getAll: (x) => Array<Buffer[]> = () => {
         return this.fetchNotes();
     };
 
