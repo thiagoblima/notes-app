@@ -99,8 +99,6 @@ Body: This is my first note
 ``` 
 
 
-
-
 ## Running the tests
 
 More to be explored soon.
