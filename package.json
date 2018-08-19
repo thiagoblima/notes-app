@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "init-project": "rm -rf node_modules && npm install && node app.js list",
+    "init-project": "rm -rf node_modules && npm install && tsc --listEmittedFiles && npm run list-notes",
     "list-notes": "node app.js list",
-    "git-uncached": "git rm -r --cached . && git add .  && git commit -m 'fixed untracked files'"
+    "build":"tsc --listEmittedFiles"
   },
   "author": "Thiago Lima",
   "license": "MIT",
