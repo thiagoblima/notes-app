@@ -1,12 +1,7 @@
 /**
  * @author: <thiagolimasp@live.com> Thiago Lima
- * 
- * @description: main start of the applicaton
- * bringing with it the @class: CommandLine
- * as well as @class: Notes, producing an
- * enhanced command line interface tool for
- * adding, removing, listing, deleting and
- * getting a note by id.
+ * @description: main start application, command
+ * line gets started here.
  * 
  * @const: commandLine = new @class: CommandLine();
  * @const: notes       = new @class: Notes(); 

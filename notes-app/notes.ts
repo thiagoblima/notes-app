@@ -3,11 +3,9 @@
  * @class: Notes
  * @interface: NotesModel
  * 
- * @property: notesString @type: Buffer
- * @property: notes       @type: {title, body}[]
+ * @instance: notesString @type: Buffer
+ * @instance: notes       @type: {title, body}[]
  * 
- * @description: responsible for handling all
- * the notes methods.
  */
 
 import * as fs from 'fs';

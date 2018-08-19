@@ -3,13 +3,9 @@
  * @class: Commandline
  * @interface: CommandLineModel
  * 
- * @property: argv    @type: object
- * @property: command @type: string
- * 
- * @description: responsible for handling
- * yargs library for creating a powerful 
- * command line tool interface with argv
- * string buffer.
+ * @instance: argv    @type: object
+ * @instance: command @type: string
+ *
  */
 
 import * as _ from  'lodash';
