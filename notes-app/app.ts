@@ -11,47 +11,80 @@
 import { CommandLine } from "./command-line";
 import { Notes } from "./notes";
 
-const commandLine = new CommandLine();
-const notes = new Notes({});
 
-
-if (commandLine.command === 'add') {
-
-  const note = notes.getAddNote(commandLine.argv.title, commandLine.argv.body);
-
-  if (note) {
-    console.log('Note created');
-    notes.getLogNote(note);
-  } else {
-    console.log('Note title taken');
+export class MainApp extends CommandLine {
+  private notes;
+  constructor(notes: Notes) {
+    super();
+    this.notes = notes;
   }
 
-} else if (commandLine.command === 'list') {
+  private get assignAddNote() {
+    const note = this.notes.getAddNote(this.argv.title, this.argv.body);
+    if (note) {
+      console.log('Note created');
+      return this.notes.getLogNote(note);
+    } else {
+      console.log('Note title taken');
+    }
 
-  const allNotes = notes.getAllNotes();
-  console.log(`Printing ${allNotes.length} note(s).`);
-  allNotes.forEach((note: any) => notes.getLogNote(note));
-
-} else if (commandLine.command === 'read') {
-
-  const note = notes.getNoteById(commandLine.argv.title);
-
-  if (note) {
-    console.log('Note found');
-    notes.getLogNote(note);
-  } else {
-    console.log('Note not found');
   }
 
-} else if (commandLine.command === 'remove') {
+  private get assingRead() {
+    const note = this.notes.getNoteById(this.argv.title);
 
-  const noteRemoved = notes.getRemovenote(commandLine.argv.title);
-  const message = noteRemoved ? 'Note was removed' : 'Note not found';
+      if (note) {
+        console.log('Note found');
+        return this.notes.getLogNote(note);
+      } else {
+        console.log('Note not found');
+      }
 
-  console.log(message);
+  }
 
-} else {
+  private get assignRemove() {
+    const noteRemoved = this.notes.getRemovenote(this.argv.title);
+    const message = noteRemoved ? 'Note was removed' : 'Note not found';
 
-  console.log('Command not recognized');
+    return console.log(message);
+  }
+
+  private get assignListNotes() {
+    const allNotes = this.notes.getAllNotes();
+    console.log(`Printing ${allNotes.length} note(s).`);
+    return allNotes.forEach((note: any) => this.notes.getLogNote(note));
+
+  }
+
+  public main() {
+    
+    if (this.command === 'add') {
+
+      return this.assignAddNote;
+
+    } else if (this.command === 'list') {
+
+      return this.assignListNotes;
+
+    } else if (this.command === 'read') {
+
+      return this.assingRead;
+
+    } else if (this.command === 'remove') {
+      
+      return this.assignRemove;
+     
+    } else {
+
+      console.log('Command not recognized');
+
+    }
+
+  }
 
 }
+const notes = new Notes({});
+
+const mainApp = new MainApp(notes);
+
+mainApp.main();
