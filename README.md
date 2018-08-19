@@ -4,7 +4,9 @@ Tiny and simple Nodejs TypeScript command line tool for notes management.
 
 ## Getting Started
 
-This app is a TypeScript version of *Andrew Mead's* Nodejs ES6 NotesApp.
+This app is a Nodejs TypeScript version of *Andrew Mead's* Nodejs ES6 NotesApp.
+
+On this version it enhances the back-end architecture, once it takes OOP architecture along side TypeScript and ES6 and 7 features, this project is taking the great advantage of working with TypeScript on the back-end with Nodejs.  
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
