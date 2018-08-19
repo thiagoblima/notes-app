@@ -33,12 +33,12 @@ export class MainApp extends CommandLine {
   private get assingRead() {
     const note = this.notes.getNoteById(this.argv.title);
 
-      if (note) {
-        console.log('Note found');
-        return this.notes.getLogNote(note);
-      } else {
-        console.log('Note not found');
-      }
+    if (note) {
+      console.log('Note found');
+      return this.notes.getLogNote(note);
+    } else {
+      console.log('Note not found');
+    }
 
   }
 
@@ -57,7 +57,7 @@ export class MainApp extends CommandLine {
   }
 
   public main() {
-    
+
     if (this.command === 'add') {
 
       return this.assignAddNote;
@@ -71,9 +71,9 @@ export class MainApp extends CommandLine {
       return this.assingRead;
 
     } else if (this.command === 'remove') {
-      
+
       return this.assignRemove;
-     
+
     } else {
 
       console.log('Command not recognized');
@@ -82,7 +82,8 @@ export class MainApp extends CommandLine {
 
   }
 
-}
+};
+
 const notes = new Notes({});
 
 const mainApp = new MainApp(notes);
