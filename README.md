@@ -118,7 +118,7 @@ more to be explored soon.
 ## Built With
 
 * [TypeScript](https://www.typescriptlang.org/) - TypeScript language
-* [Nodejs](https://nodejs.org/en/) - The web framework used
+* [Nodejs](https://nodejs.org/en/) - Main environment platform
 * [NPM](https://www.npmjs.com/) - Dependency Management
 * [Yargs](https://github.com/yargs/yargs) - Interactive command line tools
 
