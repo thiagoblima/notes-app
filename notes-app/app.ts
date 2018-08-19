@@ -16,9 +16,9 @@ const notes = new Notes({});
 
 
 if (commandLine.command === 'add') {
-  
+
   const note = notes.getAddNote(commandLine.argv.title, commandLine.argv.body);
-  
+
   if (note) {
     console.log('Note created');
     notes.getLogNote(note);
@@ -27,7 +27,7 @@ if (commandLine.command === 'add') {
   }
 
 } else if (commandLine.command === 'list') {
-  
+
   const allNotes = notes.getAllNotes();
   console.log(`Printing ${allNotes.length} note(s).`);
   allNotes.forEach((note: any) => notes.getLogNote(note));

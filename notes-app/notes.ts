@@ -18,9 +18,9 @@ export interface NotesModel {
 export class Notes implements NotesModel {
     public notesString;
     public notes;
-    constructor({... attr}) {
+    constructor({ ...attr }) {
         this.notesString = attr.notesString;
-        this.notes       = attr.notes;
+        this.notes = attr.notes;
     }
 
     private fetchNotes(): [] {
@@ -31,7 +31,7 @@ export class Notes implements NotesModel {
             return [];
         }
     }
-    
+
     private saveNotes = (notes) => {
         fs.writeFileSync('notes-data.json', JSON.stringify(notes));
     };
@@ -69,7 +69,7 @@ export class Notes implements NotesModel {
         return this.notes.length !== filteredNotes.length;
     };
 
-    public get getRemovenote(){
+    public get getRemovenote() {
         return this.removeNote;
     }
 
@@ -79,7 +79,7 @@ export class Notes implements NotesModel {
         console.log(`Body: ${note.body}`);
     };
 
-    public get getAddNote(){
+    public get getAddNote() {
         return this.addNote;
     }
 
@@ -87,11 +87,11 @@ export class Notes implements NotesModel {
         return this.getAll;
     }
 
-    public get getNoteById(){
+    public get getNoteById() {
         return this.getNote;
     }
 
-    public get getLogNote(){
+    public get getLogNote() {
         return this.logNote;
     }
 }
