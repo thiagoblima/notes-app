@@ -5,12 +5,14 @@
   "main": "app.js",
   "scripts": {
     "init-project": "rm -rf node_modules && npm install && node app.js list",
-    "list-notes": "node app.js list",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "list-notes": "node app.js list"
   },
   "author": "Andrew Mead",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/node": "^10.7.1",
+    "@types/yargs": "^11.1.1",
     "lodash": "^4.13.1",
     "yargs": "^4.7.1"
   }

@@ -1,1 +1,12 @@
+// NPM Modules
+
 node_modules
+
+// Dist bundle Modules
+
+/app.js
+/app.d.ts
+/command-line.d.ts
+/command-line.ts
+/notes.d.ts
+/notes.ts
