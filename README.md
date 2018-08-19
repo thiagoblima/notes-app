@@ -1,6 +1,6 @@
 # Notes App
 
-NodeJS command line tool for your notes management
+Tiny and simple Nodejs TypeScript command line tool for notes management.
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Nodejs, NPM, GitBash or Linux command line interface, VSCode or your preferred Code Editor - Latest 
+Nodejs, NPM, TypeScript, GitBash or Linux command line interface, VSCode or your preferred Code Editor - Latest 
 ```
 
 ### Installing
@@ -119,8 +119,9 @@ more to be explored soon.
 
 ## Built With
 
+* [TypeScript](https://www.typescriptlang.org/) - TypeScript language
 * [Nodejs](https://nodejs.org/en/) - The web framework used
-* [Maven](https://www.npmjs.com/) - Dependency Management
+* [NPM](https://www.npmjs.com/) - Dependency Management
 * [Yargs](https://github.com/yargs/yargs) - Interactive command line tools
 
 ## Contributing
