@@ -69,15 +69,9 @@ export class Notes implements NotesModel {
         return this.notes.length !== filteredNotes.length;
     };
 
-    public get getRemovenote() {
+    public get getRemoveNote() {
         return this.removeNote;
     }
-
-    private logNote = (note) => {
-        console.log('--');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
-    };
 
     public get getAddNote() {
         return this.addNote;
@@ -91,7 +85,4 @@ export class Notes implements NotesModel {
         return this.getNote;
     }
 
-    public get getLogNote() {
-        return this.logNote;
-    }
 }

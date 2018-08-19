@@ -10,22 +10,25 @@
 
 import { CommandLine } from "./command-line";
 import { Notes } from "./notes";
+import { LoggerService } from './logger';
 
 
 export class MainApp extends CommandLine {
   private notes;
+  public logger;
   constructor(notes: Notes) {
     super();
     this.notes = notes;
+    this.logger = new LoggerService();
   }
 
   private get assignAddNote(): void {
     const note = this.notes.getAddNote(this.argv.title, this.argv.body);
     if (note) {
-      console.log('Note created');
-      return this.notes.getLogNote(note);
+      this.logger.getLogResultData('Note created: \n', note);
+      return this.logger.getLogNote(note);
     } else {
-      console.log('Note title taken');
+      this.logger.getLogResult('Note title taken');
     }
 
   }
@@ -34,25 +37,25 @@ export class MainApp extends CommandLine {
     const note = this.notes.getNoteById(this.argv.title);
 
     if (note) {
-      console.log('Note found');
-      return this.notes.getLogNote(note);
+      this.logger.getLogResultData('Note found: \n', note);
+      return this.logger.getLogNote(note);
     } else {
-      console.log('Note not found');
+      this.logger.getLogResult('Note not found');
     }
 
   }
 
   private get assignRemove(): void {
-    const noteRemoved = this.notes.getRemovenote(this.argv.title);
+    const noteRemoved = this.notes.getRemoveNote(this.argv.title);
     const message = noteRemoved ? 'Note was removed' : 'Note not found';
 
-    return console.log(message);
+    return this.logger.getLogResult(message);
   }
 
   private get assignListNotes(): void {
     const allNotes = this.notes.getAllNotes();
-    console.log(`Printing ${allNotes.length} note(s).`);
-    return allNotes.forEach((note: Notes) => this.notes.getLogNote(note));
+    this.logger.getLogResult(`Printing ${allNotes.length} note(s).`);
+    return allNotes.forEach((note: Notes) => this.logger.getLogNote(note));
 
   }
 
@@ -76,7 +79,7 @@ export class MainApp extends CommandLine {
 
     } else {
 
-      console.log('Command not recognized');
+      this.logger.getLogResult('Command not recognized', null);
 
     }
 

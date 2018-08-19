@@ -10,3 +10,5 @@ node_modules
 /command-line.js
 /notes.d.ts
 /notes.js
+/logger.d.ts
+/logger.js
