@@ -5,10 +5,10 @@ const yargs = require('yargs');
 const notes = require('./notes.js');
 
 const argv = yargs.argv;
-var command = argv._[0];
+const command = argv._[0];
 
 if (command === 'add') {
-  var note = notes.addNote(argv.title, argv.body);
+  const note = notes.addNote(argv.title, argv.body);
   if (note) {
     console.log('Note created');
     notes.logNote(note);
@@ -16,11 +16,11 @@ if (command === 'add') {
     console.log('Note title taken');
   }
 } else if (command === 'list') {
-  var allNotes = notes.getAll();
+  const allNotes = notes.getAll();
   console.log(`Printing ${allNotes.length} note(s).`);
   allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'read') {
-  var note = notes.getNote(argv.title);
+  const note = notes.getNote(argv.title);
   if (note) {
     console.log('Note found');
     notes.logNote(note);
@@ -28,8 +28,8 @@ if (command === 'add') {
     console.log('Note not found');
   }
 } else if (command === 'remove') {
-  var noteRemoved = notes.removeNote(argv.title);
-  var message = noteRemoved ? 'Note was removed' : 'Note not found';
+  const noteRemoved = notes.removeNote(argv.title);
+  const message = noteRemoved ? 'Note was removed' : 'Note not found';
   console.log(message);
 } else {
   console.log('Command not recognized');

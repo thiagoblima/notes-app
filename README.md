@@ -49,6 +49,58 @@ Body: This is my first note
 
 End with an example of getting some data out of the system or using it for a little demo
 
+## Adding a new note
+
+```
+node app.js add --title="title" --body="body"
+```
+
+## Listing all notes
+
+```
+node app list
+```
+
+or
+
+```
+npm run list-notes
+``` 
+## Removing note
+
+arguments: --title=<title-id>
+
+accepts string or `\` to handle linux spacing interface.
+
+linux bash example:
+
+```
+node app.js remove --title=to\ buy
+Note was removed
+```
+
+string based example:
+
+```
+node app.js remove --title="to buy"
+Note was removed
+```
+
+## Get note byId 
+
+arguments: --title=<title-id>
+
+```
+node app.js read --title=My\ First\ Note
+Note found
+--
+Title: My First Note
+Body: This is my first note
+``` 
+
+
+
+
 ## Running the tests
 
 More to be explored soon.
@@ -81,7 +133,7 @@ We use [Gitlab](https://gitlab.com/) for versioning. For the versions available,
 
 ## Authors
 
-* **Thiago Lima** - *Initial work* - [PurpleBooth](https://gitlab.com/thiagoblima/notes-app)
+* **Thiago Lima** - *Initial work* - [Thiago Lima](https://gitlab.com/thiagoblima/notes-app)
 
 See also the list of [contributors](https://gitlab.com/thiagoblima/notes-app) who participated in this project.
 
