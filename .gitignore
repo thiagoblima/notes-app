@@ -7,6 +7,6 @@ node_modules
 /app.js
 /app.d.ts
 /command-line.d.ts
-/command-line.ts
+/command-line.js
 /notes.d.ts
-/notes.ts
+/notes.js
