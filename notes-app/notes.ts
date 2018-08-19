@@ -55,9 +55,9 @@ export class Notes implements NotesModel {
         return this.fetchNotes();
     };
 
-    private getNote: (x) => string = (title) => {
+    private getNote: (x) => Array<{}> = (title) => {
         this.notes = this.fetchNotes();
-        const filteredNotes = this.notes.filter((note) => note.title === title);
+        const filteredNotes: [] = this.notes.filter((note) => note.title === title);
         return filteredNotes[0];
     };
 
