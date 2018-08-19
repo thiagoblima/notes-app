@@ -23,7 +23,7 @@ export class Notes implements NotesModel {
         this.notes = attr.notes;
     }
 
-    private fetchNotes(): [] {
+    private fetchNotes(): Array<string> {
         try {
             this.notesString = fs.readFileSync('notes-data.json');
             return JSON.parse(this.notesString.toString());
@@ -51,17 +51,17 @@ export class Notes implements NotesModel {
         }
     };
 
-    private getAll = () => {
+    private getAll: (x) => Array<string> = () => {
         return this.fetchNotes();
     };
 
-    private getNote = (title) => {
+    private getNote: (x) => string = (title) => {
         this.notes = this.fetchNotes();
         const filteredNotes = this.notes.filter((note) => note.title === title);
         return filteredNotes[0];
     };
 
-    private removeNote = (title) => {
+    private removeNote: (x) => boolean = (title) => {
         this.notes = this.fetchNotes();
         const filteredNotes = this.notes.filter((note) => note.title !== title);
         this.saveNotes(filteredNotes);
