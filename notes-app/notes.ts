@@ -3,8 +3,8 @@
  * @class: Notes
  * @interface: NotesModel
  * 
- * @instance: notesString @type: Buffer
- * @instance: notes       @type: {title, body}[]
+ * @instance: notesString @type: <Buffer>
+ * @instance: notes       @type: <{title, body}[]>
  * 
  */
 

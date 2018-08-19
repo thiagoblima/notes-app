@@ -2,9 +2,8 @@
  * @author: <thiagolimasp@live.com> Thiago Lima
  * @class: Commandline
  * @interface: CommandLineModel
- * 
- * @instance: argv    @type: object
- * @instance: command @type: string
+ * @instance: argv    @type: <object>
+ * @instance: command @type: <string> 
  *
  */
 

@@ -16,10 +16,10 @@ import { LoggerService } from './logger';
 export class MainApp extends CommandLine {
   private notes;
   public logger;
-  constructor(notes: Notes) {
+  constructor(notes: Notes, { ...attr }) {
     super();
     this.notes = notes;
-    this.logger = new LoggerService();
+    this.logger = new LoggerService({ ...attr });
   }
 
   private get assignAddNote(): void {
@@ -89,6 +89,6 @@ export class MainApp extends CommandLine {
 
 const notes = new Notes({});
 
-const mainApp = new MainApp(notes);
+const mainApp = new MainApp(notes, {});
 
 mainApp.main();
