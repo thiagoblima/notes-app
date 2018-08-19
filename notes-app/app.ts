@@ -19,7 +19,7 @@ export class MainApp extends CommandLine {
     this.notes = notes;
   }
 
-  private get assignAddNote() {
+  private get assignAddNote(): void {
     const note = this.notes.getAddNote(this.argv.title, this.argv.body);
     if (note) {
       console.log('Note created');
@@ -30,7 +30,7 @@ export class MainApp extends CommandLine {
 
   }
 
-  private get assingRead() {
+  private get assingRead(): void {
     const note = this.notes.getNoteById(this.argv.title);
 
     if (note) {
@@ -42,17 +42,17 @@ export class MainApp extends CommandLine {
 
   }
 
-  private get assignRemove() {
+  private get assignRemove(): void {
     const noteRemoved = this.notes.getRemovenote(this.argv.title);
     const message = noteRemoved ? 'Note was removed' : 'Note not found';
 
     return console.log(message);
   }
 
-  private get assignListNotes() {
+  private get assignListNotes(): void {
     const allNotes = this.notes.getAllNotes();
     console.log(`Printing ${allNotes.length} note(s).`);
-    return allNotes.forEach((note: any) => this.notes.getLogNote(note));
+    return allNotes.forEach((note: Notes) => this.notes.getLogNote(note));
 
   }
 
