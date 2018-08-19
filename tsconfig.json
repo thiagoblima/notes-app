@@ -6,6 +6,7 @@
             "es6"
         ],
         "declaration": true,
+        "listEmittedFiles": true,
         "removeComments": false,
         "stripInternal": true,
         "alwaysStrict": true,
